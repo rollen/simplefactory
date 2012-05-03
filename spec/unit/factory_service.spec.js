@@ -41,9 +41,14 @@ describe('FactoryService', function(){
     });
 
     it('accepts a hash to override attributes', function(){
-
       record = system_under_test.create(template_name, {'name':'World'});
       expect(record).toEquateJsonObject({'name':'World', 'age':'26'});
+    });
+
+    it('does not mutate entries in database', function(){
+      var mutated_record = system_under_test.create(template_name, {'name':'World'});
+      record = system_under_test.create(template_name, {});
+      expect(record).toEquateJsonObject(template_prototype);
     });
   });
 });
