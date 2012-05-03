@@ -8,6 +8,7 @@ Given('I define a factory with a template object', function(){
   name;
 
   beforeEach(function(){
+    database = {};
     factoryService = FactoryService(database);
     name = 'job';
     template = {'name':'rollen'};
@@ -21,7 +22,7 @@ Given('I define a factory with a template object', function(){
     });
 
     Then('instance should be based on the template', function(){
-      expect(instance).toBe(template);
+      expect(instance).toEquateJsonObject(template);
     });
   });
 });
