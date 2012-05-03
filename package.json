@@ -1,0 +1,10 @@
+{
+  "name": "simplefactory",
+  "version": "0.0.1",
+  "main": "simplefactory",
+  "private": true,
+  "devDependencies":{
+    "jasmine-node": "*",
+    "cucumber": "*"
+  }
+}
