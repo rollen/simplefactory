@@ -57,8 +57,6 @@ beforeEach(function(){
       var acutal_number_of_keys = keys(actual).length;
       var status = false;
 
-      console.log('Actual' + actual);
-      console.log('Expected' + expected);
       if(expected_number_of_keys !== acutal_number_of_keys ){
         self.message = "Expected Object to have " + expected_number_of_keys + " number of keys " 
         + "but received " + acutal_number_of_keys + " number of keys";
