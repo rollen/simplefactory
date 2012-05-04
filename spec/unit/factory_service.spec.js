@@ -45,8 +45,9 @@ describe('FactoryService', function(){
       expect(record).toEquateJsonObject({'name':'World', 'age':'26'});
     });
 
-    it('does not mutate entries in database', function(){
+    it('does not mutate the original template', function(){
       var mutated_record = system_under_test.create(template_name, {'name':'World'});
+
       record = system_under_test.create(template_name, {});
       expect(record).toEquateJsonObject(template_prototype);
     });
